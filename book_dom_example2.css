@@ -1,0 +1,22 @@
+.category {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.book {
+  display: block;
+  margin-bottom: 30pt;
+  margin-left: 0;
+}
+
+.title {
+  display: block;
+  color: #ff0000;
+  font-size: 20pt;
+}
+
+.author, .year, .price {
+  display: block;
+  color: #000000;
+  margin-left: 20pt;
+}

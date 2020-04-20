@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book DOM Example</title>
+  <script type="text/javascript">
+    function displayBookData() {
+      var xmldata = document.getElementById("xmldata1");
+      var books = xmldata.getElementsByTagName("book");
+
+      // for each book, loop over its tags and create a new <div> to
+      // each book along with the information for all the fields
+      for (var i=0; i < books.length; i++) {
+        var book = books[i];
+        // make a new <div> for the book
+        var newBook = document.createElement("div");
+        newBook.setAttribute("class", "book");
+
+        // now create a <div> for the title
+        var title = document.createElement("div");
+        title.setAttribute("class", "title");
+        var titleStr = document.createTextNode(book.getElementsByTagName("title")[0].firstChild.data);
+        title.appendChild(titleStr);
+        newBook.appendChild(title);
+
+        var author = document.createElement("div");
+        author.setAttribute("class", "author");
+        var authorStr = document.createTextNode(book.getElementsByTagName("author")[0].firstChild.data);
+        author.appendChild(authorStr);
+        newBook.appendChild(author);
+
+        var price = document.createElement("div");
+        price.setAttribute("class", "price");
+        var priceStr = document.createTextNode("$"+book.getElementsByTagName("price")[0].firstChild.data);
+        price.appendChild(priceStr);
+        newBook.appendChild(price);
+
+        document.getElementsByTagName("body")[0].appendChild(newBook);
+      }
+    }
+    window.addEventListener("load", displayBookData);
+  </script>
+  <link rel="stylesheet" href="book_dom_example2.css" />
+</head>
+<body>
+
+<xml id="xmldata1" style="display:none">
+<bookstore>
+  <book category="cooking">
+    <title lang="en">Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <year>2005</year>
+    <price>30.00</price>
+  </book>
+
+  <book category="children">
+    <title lang="en">Harry Potter</title>
+    <author>J K. Rowling</author>
+    <year>2005</year>
+    <price>29.99</price>
+  </book>
+</bookstore>
+</xml>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book DOM Example</title>
+  <script type="text/javascript">
+    function displayBookData() {
+      var xmldata1 = document.getElementById("xmldata1");
+      var book = xmldata1.getElementsByTagName("book")[0];
+
+      var title = "Title: " + book.getElementsByTagName("title")[0].firstChild.data;
+      var author = "Author: " + book.getElementsByTagName("author")[0].firstChild.data;
+
+      alert("Book Data: \n\n" + title + "\n" + author);
+    }
+    window.addEventListener("load",function() {
+      document.querySelector("#showBookData").addEventListener("click",displayBookData);
+    });
+  </script>
+</head>
+<body>
+
+<xml id="xmldata1" style="display:none">
+  <book>
+    <title>Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <year>2005</year>
+  </book>
+</xml>
+
+<button id="showBookData">Show Book Data</button>
+</body>
+</html>
