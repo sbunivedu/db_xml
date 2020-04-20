@@ -55,7 +55,7 @@ A more complex example can be found in [cd_catalog.xml](cd_catalog.xml) and [cd_
 
 * use the DOM API to extract information from XML data to build a web page.
 
-  The example code can be found in [book_dom_example.html](book_dom_example.html) and [book_dom_example2.html](book_dom_example2.html).
+The example code can be found in [book_dom_example.html](book_dom_example.html). A more complex example can be found in [book_dom_example2.html](book_dom_example2.html) and [book_dom_example2.css](book_dom_example2.css)
 
 ## Reference
 * w3schools XML tutorial https://www.w3schools.com/xml/default.asp
